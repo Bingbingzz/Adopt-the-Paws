@@ -12,6 +12,7 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import PetsIcon from '@mui/icons-material/Pets';
+import { useNavigate } from 'react-router-dom';
 // import { createStyles } from '@mui/material';
 
 const pages = ['Adopt', 'Donate', 'Contact us'];
@@ -28,13 +29,15 @@ function AppAppBar() {
     setAnchorElUser(event.currentTarget);
   };
 
-  const handleCloseNavMenu = () => {
+  const handleCloseNavMenu = (page) => {
     setAnchorElNav(null);
+    // return <Navigate to= {page}/>
   };
 
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+  const navigate = useNavigate();
 
   return (
     <AppBar position="static" color="primary">
@@ -89,7 +92,7 @@ function AppAppBar() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <MenuItem key={page} onClick={() =>{navigate({page});}}>
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}

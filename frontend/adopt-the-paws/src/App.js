@@ -1,20 +1,26 @@
 import "./App.css";
 import React from "react";
-import Home from "./Home";
+import Home from "./pages/Home";
 import { ThemeProvider } from '@mui/material/styles';
 import theme from "./theme"
-// import {BrowserRouter} from "react-router-dom";
-import Adopt from "./Adopt"
+import Adopt from "./pages/Adopt"
+import {Route, Router, Routes} from "react-router-dom";
+
+
 function App() {
   return (
-    // <BrowserRouter>
+
     <ThemeProvider theme={theme}>
       <div className="App">
-        {/* <Home/> */}
-        <Adopt/>
+        <Router>
+          <Routes>
+            <Route path ="/" element={<Home />}/>
+            <Route path ="/adopt" element={<Adopt />}/>
+          </Routes>
+        </Router>
       </div>
     </ThemeProvider>
-    // </BrowserRouter>
+
   );
 }
 
