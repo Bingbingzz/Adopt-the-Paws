@@ -4,6 +4,7 @@ import { styled } from '@mui/material/styles';
 
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
+import { createStyles } from '@mui/material/styles';
 
 const ProductHeroLayoutRoot = styled('section')(({ theme }) => ({
   color: theme.palette.common.white,
@@ -16,6 +17,10 @@ const ProductHeroLayoutRoot = styled('section')(({ theme }) => ({
     maxHeight: 1300,
   },
 }));
+
+const styles = createStyles({
+  background: 'red'
+})
 
 const Background = styled(Box)({
   position: 'absolute',

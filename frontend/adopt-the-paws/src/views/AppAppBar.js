@@ -12,6 +12,7 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import PetsIcon from '@mui/icons-material/Pets';
+// import { createStyles } from '@mui/material';
 
 const pages = ['Adopt', 'Donate', 'Contact us'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];

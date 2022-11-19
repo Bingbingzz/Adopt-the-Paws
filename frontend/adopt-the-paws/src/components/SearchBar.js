@@ -2,10 +2,19 @@ import { useState } from "react";
 import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
 import TextField from "@mui/material/TextField";
+import { styled } from '@mui/material/styles';
+
+
+const SearchBarWrapper = styled(TextField)(() => ({
+  backgroundColor: 'white',
+  borderRadius: 100,
+  width: 600,
+  borderWidth: 0
+}));
 
 const SearchBar = ({setSearchQuery}) => (
-  <form>
-    <TextField
+  <form className="search">
+    <SearchBarWrapper
       id="search-bar"
       className="text"
       onInput={(e) => {

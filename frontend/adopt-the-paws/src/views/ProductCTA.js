@@ -34,10 +34,10 @@ function ProductCTA() {
           >
             <Box component="form" onSubmit={handleSubmit} sx={{ maxWidth: 400 }}>
               <Typography variant="h2" component="h2" gutterBottom>
-                Receive offers
+                Let's connect
               </Typography>
               <Typography variant="h5">
-                Taste the holidays of the everyday close to home.
+                Bring your lovely kitten to home.
               </Typography>
               <TextField
                 noBorder
@@ -51,7 +51,7 @@ function ProductCTA() {
                 variant="contained"
                 sx={{ width: '100%' }}
               >
-                Keep me updated
+                Start communication
               </Button>
             </Box>
           </Box>
@@ -75,7 +75,7 @@ function ProductCTA() {
           />
           <Box
             component="img"
-            src="https://images.unsplash.com/photo-1527853787696-f7be74f2e39a?auto=format&fit=crop&w=750"
+            src="https://media-be.chewy.com/wp-content/uploads/2015/08/18151603/when-can-kittens-be-adopted-1024x548.jpg"
             alt="call to action"
             sx={{
               position: 'absolute',
