@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import { ThemeProvider } from '@mui/material/styles';
 import theme from "./theme"
 import Adopt from "./pages/Adopt"
-import {Route, Router, Routes} from "react-router-dom";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 
 function App() {
@@ -12,12 +12,12 @@ function App() {
 
     <ThemeProvider theme={theme}>
       <div className="App">
-        <Router>
+        <BrowserRouter>
           <Routes>
             <Route path ="/" element={<Home />}/>
             <Route path ="/adopt" element={<Adopt />}/>
           </Routes>
-        </Router>
+        </BrowserRouter>
       </div>
     </ThemeProvider>
 
