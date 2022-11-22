@@ -7,12 +7,13 @@
 var app = require('../app');
 var debug = require('debug')('express-locallibrary-tutorial:server');
 var http = require('http');
+// require("dotenv").config();
 
 /**
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort('10000');
+const port = process.env.PORT || normalizePort('10000');
 app.set('port', port);
 
 /**
