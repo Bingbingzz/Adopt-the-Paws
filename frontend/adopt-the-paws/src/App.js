@@ -6,7 +6,9 @@ import theme from "./theme"
 import Adopt from "./pages/Adopt"
 import AddAdopt from "./pages/AddAdopt"
 import {BrowserRouter, Routes, Route} from "react-router-dom";
-
+import  Dashboard  from "./views/Dashboard";
+import Profile from "./views/Profile";
+import Logout from "./views/Logout";
 
 function App() {
   return (
@@ -18,6 +20,9 @@ function App() {
             <Route path ="/" element={<Home />}/>
             <Route path ="/adopt" element={<Adopt />}/>
             <Route path ="/add_adopt" element={<AddAdopt />}/>
+            <Route path ="/profile" element={<Profile />}/>
+            <Route path ="/dashboard" element={<Dashboard />}/>
+            <Route path ="/logout" element={<Logout />}/>
           </Routes>
         </BrowserRouter>
       </div>
