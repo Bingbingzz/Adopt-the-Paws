@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import { ThemeProvider } from '@mui/material/styles';
 import theme from "./theme"
 import Adopt from "./pages/Adopt"
+import AddAdopt from "./pages/AddAdopt"
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 
@@ -16,6 +17,7 @@ function App() {
           <Routes>
             <Route path ="/" element={<Home />}/>
             <Route path ="/adopt" element={<Adopt />}/>
+            <Route path ="/add_adopt" element={<AddAdopt />}/>
           </Routes>
         </BrowserRouter>
       </div>
