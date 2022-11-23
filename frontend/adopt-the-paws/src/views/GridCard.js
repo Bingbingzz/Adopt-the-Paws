@@ -1,45 +1,73 @@
-import Card from 'react-bootstrap/Card';
+// import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import Box from '@mui/material/Box';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import * as React from 'react';
 import { useEffect, useState } from "react";
+
+
 
 function GridCard() {
   // TODO: read data from backend.
   const [animals, setAnimals] = useState([]);
 
-  useEffect(() => {
-    const fetchData = async() => {
-      try {
-        const response = await fetch("http://localhost:5000/api/tasks");
-        if (!response.ok) {
-          throw new Error("HTTP error! Status: ", response.status);
-        }
-        const data = await response.json();
-        console.log(data);
-        setAnimals(data);
-      } catch (err) {
-        console.log("Fetch data ", err);
+  const fetchData = async() => {
+    try {
+      const response = await fetch("http://localhost:5000/animals");
+      if (!response.ok) {
+        throw new Error("HTTP error! Status: ", response.status);
       }
+      const data = await response.json();
+      console.log(data);
+      setAnimals(data);
+    } catch (err) {
+      console.log("Fetch data ", err);
     }
+  }
 
+  useEffect(() => {
     fetchData();
   }, [])
+
+  const deleteAnimal = async (docId) => {
+    const response = await fetch(`http://localhost:5000/animal/${docId}`, {
+      method: "DELETE"
+    });
+
+    console.log(response.body)
+
+    if (response.ok) {
+      fetchData()
+    };
+  }
 
   return (
     <Row xs={1} md={2} className="g-4">
 
-      {Array.from({ length: 4}).map((_, idx) => (
+      {Array.from(animals).map((cat, idx) => (
         <Col>
-          <Card>
-            {/* <Card.Img variant="top" src="https://media-be.chewy.com/wp-content/uploads/2015/08/18151603/when-can-kittens-be-adopted-1024x548.jpg" /> */}
-            <Card.Body>
-              <Card.Title>Card title</Card.Title>
-              <Card.Text>
-                This is a longer card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </Card.Text>
-            </Card.Body>
+          <Card sx={{ minWidth: 275 }} variant="outlined">
+            <CardContent>
+              <Typography variant="h4" gutterBottom>
+                {cat.name}
+              </Typography>
+              <Typography variant="subtitle1" gutterBottom>
+                <div>{cat.gender} - {cat.age} years old</div>
+                <div>{cat.breed}</div>
+              </Typography>
+              <Typography variant="subtitle2" gutterBottom>
+                Vancouver, BC
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Button size="small">Edit</Button>
+              <Button size="small" onClick={() => deleteAnimal(cat._id)}>Delete</Button>
+            </CardActions>
           </Card>
           
         </Col>
