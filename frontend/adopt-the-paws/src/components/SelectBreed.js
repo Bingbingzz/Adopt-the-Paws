@@ -30,10 +30,10 @@ export default function SelectBreed() {
           onChange={handleChange}
         >
           <MenuItem value={"domestic shorthair"}>Domestic Shorthair</MenuItem>
-          <MenuItem value={"Domestic Longhair"}>Domestic Longhair</MenuItem>
-          <MenuItem value={"Female"}>American Shorthair</MenuItem>
+          <MenuItem value={"domestic longhair"}>Domestic Longhair</MenuItem>
+          <MenuItem value={"american shorthair"}>American Shorthair</MenuItem>
           <MenuItem value={"siamese"}>Siamese</MenuItem>
-          <MenuItem value={"Ragdoll"}>Ragdoll</MenuItem>
+          <MenuItem value={"ragdoll"}>Ragdoll</MenuItem>
           <MenuItem value={"maine coon"}>Maine Coon</MenuItem>
           <MenuItem value={"sphynx"}>Sphynx</MenuItem>
           <MenuItem value={"other"}>Other</MenuItem>

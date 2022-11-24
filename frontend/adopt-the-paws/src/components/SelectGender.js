@@ -29,8 +29,8 @@ export default function SelectGender() {
           select
           onChange={handleChange}
         >
-          <MenuItem value={"Male"}>Male</MenuItem>
-          <MenuItem value={"Female"}>Female</MenuItem>
+          <MenuItem value={"male"}>Male</MenuItem>
+          <MenuItem value={"female"}>Female</MenuItem>
         </TextField>
       </FormControl>
     </Box>
