@@ -16,7 +16,7 @@ app.get("/animals", async (request, response) => {
 });
 
 // Read one functionality
-app.get("/animals/:id", async (request, response) => {
+app.get("/animal/:id", async (request, response) => {
   const animal = await animalModel.find({"_id" : ObjectId(request.params.id)});
 
   try {
