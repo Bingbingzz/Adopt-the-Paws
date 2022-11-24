@@ -1,32 +1,85 @@
-// import * as React from 'react';
-// import Box from '@mui/material/Box';
-// import Button from '@mui/material/Button';
-// import TextField from '@mui/material/TextField';
 
-// export default function AddForm() {
-//   return (
-//     <Box
-//       component="form"
-//       sx={{
-//         '& > :not(style)': { m: 1, width: '25ch' },
-//       }}
-//       noValidate
-//       autoComplete="off"
-//     >
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+import InputAdornment from '@mui/material/InputAdornment';
+import SelectGender from "./SelectGender";
+import SelectBreed from "./SelectBreed";
+import SelectColor from "./SelectColor";
+import SelectCoatLength from "./SelectCoatLength";
+import SelectGoodWith from "./SelectGoodWith";
+import { useState } from 'react';
 
-//      <FormControl fullWidth>
-//         <TextField id="pet-name" type="text" label="Name" variant="outlined"/>
-//         <br />
-//         <TextField id="pet-age" type="text" label="Age" variant="outlined" />
-//         <br />
-//         <TextField type="pet-weight" label="Weight" variant="outlined"/>
-//         <br />
-//     </FormControl>
+export default function AddForm() {
+  const [name, setName] = useState("");
+  const [breed, setBreed] = useState("");
+  const [age, setAge] = useState(0);
+  const [gender, setGender] = useState("");
+  const [weight, setWeight] = useState(0);
+  const [color, setColor] = useState("");
+  const [coatLength, setCoatLength] = useState("");
+  const [goodWith, setGoodWith] = useState("");
 
-//       <Box>
-//         <Button onClick={() => {}}>Cancel</Button>
-//         <Button onClick={() => {}}>Add</Button>
-//       </Box>
-//     </Box>
-//   );
-// }
+  const handleSubmit = (e) => {
+    console.log([name, breed, age, gender, weight, color, coatLength, goodWith].join(", "));
+  }
+
+  return (
+    <Box
+      component="form"
+      sx={{
+        '& > :not(style)': { m: 1, width: '25ch' },
+      }}
+      noValidate
+      autoComplete="off"
+    >
+      <TextField
+        // required
+        id="pet-name"
+        type="text"
+        label="Name"
+        variant="outlined"
+        margin="dense"
+        value={name}
+        onChange={(e) => {setName(e.target.value);}}
+      />
+      <br />
+      <TextField
+        id="pet-age"
+        type="number"
+        label="Age"
+        variant="outlined"
+        margin="dense"
+        value={age}
+        onChange={(e) => {setAge(Math.max(0, e.target.value));}}
+      />
+      <br />
+      <TextField
+        type="number"
+        label="Weight"
+        variant="outlined"
+        margin="dense"
+        InputProps={{
+          endAdornment: <InputAdornment position="end">kg</InputAdornment>
+        }}
+        value={weight}
+        onChange={(e) => {setWeight(Math.max(0, e.target.value));}}
+
+      />
+      <br />
+      <SelectGender value={gender} onChange={(e) => {setGender(e.target.value)}} />
+      <br />
+      <SelectBreed value={breed} onChange={(e) => {setBreed(e.target.value)}}/>
+      <br />
+      <SelectColor value={color} onChange={(e) => {setColor(e.target.value)}}/>
+      <br />
+      <SelectCoatLength value={coatLength} onChange={(e) => {setCoatLength(e.target.value)}}/>
+      <br />
+      <SelectGoodWith value={goodWith} onChange={(e) => {setGoodWith(e.target.value)}}/>
+      <br />
+      <Button onClick={() => {}}>Cancel</Button>
+      <Button onClick={handleSubmit}>Add</Button>
+    </Box>
+    );
+  }
