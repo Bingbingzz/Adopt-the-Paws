@@ -9,12 +9,15 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import * as React from 'react';
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 
 function GridCard() {
   // TODO: read data from backend.
   const [animals, setAnimals] = useState([]);
+
+  const navigate = useNavigate();
 
   const fetchData = async() => {
     try {
@@ -63,7 +66,7 @@ function GridCard() {
               </Typography>
             </CardContent>
             <CardActions>
-              <Button size="small">Edit</Button>
+              <Button size="small" onClick={() => navigate(`/edit_adopt/${cat._id}`)}>Edit</Button>
               <Button size="small" onClick={() => deleteAnimal(cat._id)}>Delete</Button>
             </CardActions>
           </Card>
@@ -73,6 +76,7 @@ function GridCard() {
       ))}
       
     </Row>
+
   );
 }
 
