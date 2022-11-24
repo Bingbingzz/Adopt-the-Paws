@@ -39,8 +39,6 @@ function GridCard() {
       method: "DELETE"
     });
 
-    console.log(response.body)
-
     if (response.ok) {
       fetchData()
     };
