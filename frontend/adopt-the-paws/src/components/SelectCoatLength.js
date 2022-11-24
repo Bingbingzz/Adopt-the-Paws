@@ -4,30 +4,18 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import TextField from "@mui/material/TextField";
 
-export default function SelectCoatLength() {
-  const [coatLength, setCoatLength] = React.useState("");
-
-  const handleChange = (event) => {
-    setCoatLength(event.target.value);
-  };
+export default function SelectCoatLength({ value, onChange }) {
 
   return (
-    <Box
-      component="form"
-      sx={{
-        "& > :not(style)": { m: 1, width: "25ch" }
-      }}
-      noValidate
-      autoComplete="off"
-    >
+    <>
       <FormControl>
         {/* <InputLabel id="demo-simple-select-label">Gender</InputLabel> */}
         <TextField
           id="select-coatLength"
-          value={coatLength}
+          value={value}
           label="Coat Length"
           select
-          onChange={handleChange}
+          onChange={onChange}
         >
           <MenuItem value={"long"}>Long</MenuItem>
           <MenuItem value={"medium"}>Medium</MenuItem>
@@ -35,6 +23,6 @@ export default function SelectCoatLength() {
           <MenuItem value={"no hair"}>No Hair</MenuItem>
         </TextField>
       </FormControl>
-    </Box>
+    </>
   );
 }

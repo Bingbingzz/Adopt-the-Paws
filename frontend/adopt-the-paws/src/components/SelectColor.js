@@ -4,30 +4,17 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import TextField from "@mui/material/TextField";
 
-export default function SelectColor() {
-  const [color, setColor] = React.useState("");
-
-  const handleChange = (event) => {
-    setColor(event.target.value);
-  };
-
+export default function SelectColor({ value, onChange }) {
   return (
-    <Box
-      component="form"
-      sx={{
-        "& > :not(style)": { m: 1, width: "25ch" }
-      }}
-      noValidate
-      autoComplete="off"
-    >
+    <>
       <FormControl>
         {/* <InputLabel id="demo-simple-select-label">Gender</InputLabel> */}
         <TextField
           id="select-color"
-          value={color}
+          value={value}
           label="Color"
           select
-          onChange={handleChange}
+          onChange={onChange}
         >
           <MenuItem value={"tabby"}>Tabby</MenuItem>
           <MenuItem value={"white"}>White</MenuItem>
@@ -38,6 +25,6 @@ export default function SelectColor() {
           <MenuItem value={"other"}>Other</MenuItem>
         </TextField>
       </FormControl>
-    </Box>
+    </>
   );
 }

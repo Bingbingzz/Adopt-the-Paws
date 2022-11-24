@@ -4,30 +4,17 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import TextField from "@mui/material/TextField";
 
-export default function SelectGoodWith() {
-  const [goodWith, setGoodWith] = React.useState("");
-
-  const handleChange = (event) => {
-    setGoodWith(event.target.value);
-  };
-
+export default function SelectGoodWith({ value, onChange }) {
   return (
-    <Box
-      component="form"
-      sx={{
-        "& > :not(style)": { m: 1, width: "25ch" }
-      }}
-      noValidate
-      autoComplete="off"
-    >
+    <>
       <FormControl fullWidth>
         {/* <InputLabel id="demo-simple-select-label">Gender</InputLabel> */}
         <TextField
           id="select-gender"
-          value={goodWith}
+          value={value}
           label="Good With"
           select
-          onChange={handleChange}
+          onChange={onChange}
         >
           <MenuItem value={"cats"}>Cats</MenuItem>
           <MenuItem value={"dogs"}>Dogs</MenuItem>
@@ -36,6 +23,6 @@ export default function SelectGoodWith() {
           <MenuItem value={"indoor/outdoor"}>Indoor/Outdoor</MenuItem>
         </TextField>
       </FormControl>
-    </Box>
+    </>
   );
 }

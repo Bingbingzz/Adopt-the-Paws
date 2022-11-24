@@ -4,30 +4,17 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import TextField from "@mui/material/TextField";
 
-export default function SelectBreed() {
-  const [breed, setBreed] = React.useState("");
-
-  const handleChange = (event) => {
-    setBreed(event.target.value);
-  };
-
+export default function SelectBreed({ value, onChange }) {
   return (
-    <Box
-      component="form"
-      sx={{
-        "& > :not(style)": { m: 1, width: "25ch" }
-      }}
-      noValidate
-      autoComplete="off"
-    >
+    <>
       <FormControl>
         {/* <InputLabel id="demo-simple-select-label">Gender</InputLabel> */}
         <TextField
           id="select-breed"
-          value={breed}
+          value={value}
           label="Breed"
           select
-          onChange={handleChange}
+          onChange={onChange}
         >
           <MenuItem value={"domestic shorthair"}>Domestic Shorthair</MenuItem>
           <MenuItem value={"domestic longhair"}>Domestic Longhair</MenuItem>
@@ -39,6 +26,6 @@ export default function SelectBreed() {
           <MenuItem value={"other"}>Other</MenuItem>
         </TextField>
       </FormControl>
-    </Box>
+    </>
   );
 }
