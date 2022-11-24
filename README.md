@@ -1,5 +1,7 @@
 # Adopt-the-Paws
 
+Authors: Guoao Wei, Annabelle Sun and Ce Zhao
+
 ## Project outline
 
 Adopt the Paws is an online platform that helps homeless cats find new homes. The platform can be used by shelters and cat seekers and provides features including posting and finding adoptable cats, reporting lost cats, checking cats' profile, etc. 
