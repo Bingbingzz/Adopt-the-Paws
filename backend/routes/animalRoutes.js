@@ -44,8 +44,8 @@ app.post("/animal", async (request, response) => {
 //Update functionality
 app.patch("/animal/:id", async (request, response) => {
   try {
-    await animalModel.findByIdAndUpdate(request.params.id, request.body);
-    await animalModel.save();
+    const animal = await animalModel.findByIdAndUpdate(request.params.id, request.body);
+    // await animalModel.save();
     response.send(animal);
   } catch (error) {
     response.status(500).send(error);
