@@ -4,7 +4,7 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import TextField from "@mui/material/TextField";
 
-export default function SelectColor() {
+export default function SelectCoatLength() {
   const [coatLength, setCoatLength] = React.useState("");
 
   const handleChange = (event) => {

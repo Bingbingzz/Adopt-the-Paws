@@ -4,7 +4,7 @@ import TextField from "@mui/material/TextField";
 import FormControl from "@mui/material/FormControl";
 import InputAdornment from "@mui/material/InputAdornment";
 
-export default function InputAdornments() {
+export default function TextFieldName() {
   const [name, setName] = React.useState("");
   const [age, setAge] = React.useState("");
   const [weight, setWeight] = React.useState("");
