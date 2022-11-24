@@ -1,4 +1,5 @@
 const express = require("express");
+const ObjectId = require('mongodb').ObjectId; 
 const animalModel = require("../models/animal");
 const app = express();
 
@@ -9,6 +10,17 @@ app.get("/animals", async (request, response) => {
 
   try {
     response.send(animals);
+  } catch (error) {
+    response.status(500).send(error);
+  }
+});
+
+// Read one functionality
+app.get("/animals/:id", async (request, response) => {
+  const animal = await animalModel.find({"_id" : ObjectId(request.params.id)});
+
+  try {
+    response.send(animal);
   } catch (error) {
     response.status(500).send(error);
   }
