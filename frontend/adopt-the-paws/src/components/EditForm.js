@@ -35,7 +35,7 @@ export default function EditForm() {
 
   const fetchOne = async() => {
     try {
-      const response = await fetch(`http://localhost:5000/animals/${docId}`);
+      const response = await fetch(`/animals/${docId}`);
       if (!response.ok) {
         throw new Error("HTTP error! Status: ", response.status);
       }
@@ -61,7 +61,7 @@ export default function EditForm() {
   }, []);
 
   const updateRequest = async (docId, data) => {
-    const response = await fetch(`http://localhost:5000/animal/${docId}`, {
+    const response = await fetch(`/animal/${docId}`, {
       method: "PATCH",
       headers: {
         'Content-Type': 'application/json',
