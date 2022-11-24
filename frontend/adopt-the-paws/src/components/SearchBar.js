@@ -31,23 +31,23 @@ const SearchBar = ({setSearchQuery}) => (
   </form>
 );
 // https://dev.to/marianna13/create-a-search-bar-with-react-and-material-ui-4he
-const filterData = (query, data) => {
-  if (!query) {
-    return data;
-  } else {
-    return data.filter((d) => d.toLowerCase().includes(query));
-  }
-};
-const data = [
-  "Paris",
-  "London",
-  "New York",
-  "Tokyo",
-  "Berlin",
-  "Buenos Aires",
-  "Cairo",
-  "Canberra",
-  "Rio de Janeiro",
-  "Dublin"
-];
+// const filterData = (query, data) => {
+//   if (!query) {
+//     return data;
+//   } else {
+//     return data.filter((d) => d.toLowerCase().includes(query));
+//   }
+// };
+// const data = [
+//   "Paris",
+//   "London",
+//   "New York",
+//   "Tokyo",
+//   "Berlin",
+//   "Buenos Aires",
+//   "Cairo",
+//   "Canberra",
+//   "Rio de Janeiro",
+//   "Dublin"
+// ];
 export default SearchBar;

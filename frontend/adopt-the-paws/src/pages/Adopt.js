@@ -8,8 +8,7 @@ import ProductCTA from '../views/ProductCTA'
 import ProductHowItWorks from '../views/ProductHowItWorks';
 import GridCard from '../views/GridCard'
 import AppAppBar from '../views/AppAppBar';
-import { Navigate } from 'react-router-dom';
-
+import AddAdoptionButton from '../components/AddAdoptionButton';
 export default function Adopt() {
   return (
     <div>
@@ -18,8 +17,9 @@ export default function Adopt() {
       <ProductCategories />
       <ProductHowItWorks />
       <ProductSmokingHero /> */}
-
+      
       <GridCard/>
+      <AddAdoptionButton/>
       <ProductCTA/>
       <AppFooter />
     </div>
