@@ -21,7 +21,7 @@ function GridCard() {
 
   const fetchData = async() => {
     try {
-      const response = await fetch("/animals");
+      const response = await fetch("/api/animals");
       if (!response.ok) {
         throw new Error("HTTP error! Status: ", response.status);
       }
@@ -38,7 +38,7 @@ function GridCard() {
   }, [])
 
   const deleteAnimal = async (docId) => {
-    const response = await fetch(`/animal/${docId}`, {
+    const response = await fetch(`/api/animal/${docId}`, {
       method: "DELETE"
     });
 

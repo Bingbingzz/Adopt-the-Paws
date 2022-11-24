@@ -24,7 +24,7 @@ export default function AddForm() {
   const navigate = useNavigate();
 
   const insertRequest = async (data) => {
-    const response = await fetch(`/animal`, {
+    const response = await fetch(`/api/animal`, {
       method: "POST",
       headers: {
         'Content-Type': 'application/json',
