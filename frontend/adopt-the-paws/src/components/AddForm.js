@@ -21,8 +21,23 @@ export default function AddForm() {
   const [coatLength, setCoatLength] = useState("");
   const [goodWith, setGoodWith] = useState("");
 
-  const handleSubmit = (e) => {
-    console.log([name, breed, age, gender, weight, color, coatLength, goodWith].join(", "));
+  const insertRequest = async (data) => {
+    const response = await fetch(`http://localhost:5000/animal`, {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+    console.log(await response.json());
+    if (response.ok) {
+      console.log("Insert success")
+    };
+  }
+
+  const handleSubmit = async () => {
+    const doc = { name, breed, age, gender, weight, color, coatLength, goodWith };
+    insertRequest(doc);
   }
 
   return (
