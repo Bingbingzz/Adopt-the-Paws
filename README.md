@@ -2,6 +2,8 @@
 
 Authors: Guoao Wei, Annabelle Sun and Ce Zhao
 
+Deployment URL by Render: <https://cat-adoption.onrender.com>
+
 ## Setup instruction (develop)
 
 ### Backend
