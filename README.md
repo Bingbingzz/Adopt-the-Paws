@@ -2,7 +2,7 @@
 
 Authors: Guoao Wei, Annabelle Sun and Ce Zhao
 
-Deployment URL by Render: <https://cat-adoption.onrender.com>
+Deployment URL by Render: <https://adopt-the-paws.onrender.com>
 
 ## Setup instruction (develop)
 
