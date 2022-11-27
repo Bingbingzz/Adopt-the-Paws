@@ -1,5 +1,59 @@
 # Adopt-the-Paws
 
+Authors: Guoao Wei, Annabelle Sun and Ce Zhao
+
+Deployment URL by Render: <https://adopt-the-paws.onrender.com>
+
+## Setup instruction (develop)
+
+### Backend
+
+1. Enter backend folder, install dependencies
+
+   ```bash
+   cd backend
+   npm install
+   ```
+
+2. Create a `.env` file which includes the following content. You can specify a different `PORT` if needed.
+
+   ```
+   pawsURI = "mongodb+srv://paws:paws123@cluster0.0jp4jbd.mongodb.net/cluster0?retryWrites=true&w=majority"
+   port = 5000
+   ```
+   
+3. Start the backend
+   ```bash
+   nodemon ./bin/www
+   ```
+
+### Frontend
+
+1. Enter frontend app folder, install dependencies
+   
+   ```bash
+   cd frontend/adopt-the-paws
+   npm install
+   ```
+
+2. Create a `.env` file which includes the following content. You can specify a different `PORT` if needed.
+
+   ```
+   port=10000
+   ```  
+
+   In the `"proxy"` field in `package.json`, make sure the proxy URL port matches the backend's port (`5000` in our case)
+
+   ```json
+   "proxy": "http://localhost:5000",
+   ```
+
+3. Start the React app
+   
+   ```bash
+   npm start
+   ```
+
 ## Project outline
 
 Adopt the Paws is an online platform that helps homeless cats find new homes. The platform can be used by shelters and cat seekers and provides features including posting and finding adoptable cats, reporting lost cats, checking cats' profile, etc. 
